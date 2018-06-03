@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Controller.CreateQuestionActivity">
+
+<TextView
+    android:id="@+id/textView5"
+    android:layout_width="222dp"
+    android:layout_height="39dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="52dp"
+    android:text="Answer:"
+    android:textColor="@android:color/black"
+    android:textStyle="bold"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/txt_question" />
+
+<TextView
+    android:id="@+id/textViewDeckName"
+    android:layout_width="222dp"
+    android:layout_height="39dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="24dp"
+    android:text="Question:"
+    android:textColor="@android:color/black"
+    android:textStyle="bold"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textViewDeckInfo" />
+
+<EditText
+    android:id="@+id/txt_answer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:ems="10"
+    android:inputType="textPersonName"
+    android:text="Enter Answer Here:"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.503"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+<EditText
+    android:id="@+id/txt_question"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:ems="10"
+    android:inputType="textPersonName"
+    android:text="Enter Question here"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.503"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textViewDeckName" />
+
+<TextView
+    android:id="@+id/textViewDeckInfo"
+    android:layout_width="219dp"
+    android:layout_height="52dp"
+    android:text="Enter card info:"
+    android:textColor="@android:color/black"
+    android:textStyle="bold"
+    tools:layout_editor_absoluteX="16dp"
+    tools:layout_editor_absoluteY="16dp" />
+
+<Button
+    android:id="@+id/btn_finalize"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="40dp"
+    android:text="Finalize Deck"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/btn_createDeck" />
+
+<Button
+    android:id="@+id/btn_createDeck"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="68dp"
+    android:text="Add Another Question"
+    app:layout_constraintEnd_toStartOf="@+id/btn_finalize"
+    app:layout_constraintHorizontal_bias="0.508"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/txt_answer" />
+</android.support.constraint.ConstraintLayout>

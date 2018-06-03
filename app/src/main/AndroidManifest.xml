@@ -22,7 +22,9 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".Controller.QuestionInterfaceActivity"></activity>
+        <activity android:name=".Controller.QuestionInterfaceActivity" />
+        <activity android:name=".Controller.CreateDeckActivity" />
+        <activity android:name=".Controller.CreateQuestionActivity"></activity>
     </application>
 
 </manifest>
