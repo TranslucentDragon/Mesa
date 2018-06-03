@@ -1,6 +1,8 @@
 package com.tuckervh.messaging.mesa.StorageClasses;
 
-public class QuestionData {
+import java.io.Serializable;
+
+public class QuestionData implements Serializable{
      private String question;
      private Answer answer;
      private int numRight;
