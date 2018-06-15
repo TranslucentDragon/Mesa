@@ -75,7 +75,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
-        android:id="@+id/btn_createDeck"
+        android:id="@+id/btn_addQuestion"
         android:layout_width="95dp"
         android:layout_height="55dp"
         android:layout_marginBottom="8dp"

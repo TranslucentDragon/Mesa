@@ -29,6 +29,16 @@ public class TransferMethods {
     }
 
     /**
+     * Opens ListActivity context
+     * @param context the current context
+     */
+    public static void goToList(Context context) {
+        Intent intent = new Intent(context, ListActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        context.startActivity(intent);
+    }
+
+    /**
      * Opens CreateDeckActivity context
      * @param context the current context
      */

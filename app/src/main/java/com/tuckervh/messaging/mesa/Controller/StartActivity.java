@@ -23,7 +23,7 @@ public class StartActivity extends AppCompatActivity {
         super.onStart();
         setContentView(R.layout.activity_start);
 
-        Button createDeckBtn = findViewById(R.id.btn_createDeck);
+        Button createDeckBtn = findViewById(R.id.btn_addQuestion);
         Button previousBtn = findViewById(R.id.btn_previousDeck);
         Button newDeckBtn = findViewById(R.id.btn_newDeck);
 
@@ -33,5 +33,17 @@ public class StartActivity extends AppCompatActivity {
                 TransferMethods.goToCreateDeck(context);
             }
         });
+
+        newDeckBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TransferMethods.goToList(context);
+            }
+        });
+    }
+
+    @Override
+    public void onBackPressed() {
+        System.exit(0);
     }
 }

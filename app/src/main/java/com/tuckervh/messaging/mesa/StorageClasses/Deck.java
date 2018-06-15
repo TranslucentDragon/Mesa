@@ -1,8 +1,10 @@
 package com.tuckervh.messaging.mesa.StorageClasses;
 
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class Deck implements Serializable{
     private List<QuestionData> questionList;
@@ -28,7 +30,4 @@ public class Deck implements Serializable{
     public List<QuestionData> getQuestionList() {
         return questionList;
     }
-
-
-
 }

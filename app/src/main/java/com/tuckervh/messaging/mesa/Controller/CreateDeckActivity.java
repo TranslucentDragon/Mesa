@@ -27,9 +27,10 @@ public class CreateDeckActivity extends AppCompatActivity {
 
         EditText deckNameEditText = findViewById(R.id.txt_deckName);
 
-        Button createEmptyDeck = findViewById(R.id.btn_createDeck);
+        Button createEmptyDeck = findViewById(R.id.btn_addQuestion);
         createEmptyDeck.setClickable(false);
 
+        //might need an onfocus listener
         if (!(TextUtils.isEmpty(deckNameEditText.getText().toString()))) {
             createEmptyDeck.setClickable(true);
         }
