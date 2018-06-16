@@ -77,7 +77,7 @@ public class DeckStorage {
      * Converts the deck list into a string array (typically for the list activity)
      * @param context the current context
      */
-    public static List<String> deckListToArrayList(Context context) {
+    public static List<String> getDeckList(Context context) {
         String line;
         List<String> deckList = new ArrayList<>();
         try {
