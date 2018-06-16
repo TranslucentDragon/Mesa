@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class QuestionData implements Serializable {
      private String question;
+     //might have to serialize answer
      private Answer answer;
      private int numRight;
      private int numWrong;

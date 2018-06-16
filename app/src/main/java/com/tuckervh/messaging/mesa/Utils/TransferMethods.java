@@ -41,12 +41,26 @@ public class TransferMethods {
     /**
      * Opens CreateDeckActivity context
      * @param context the current context
+     * @param deckName the deck to add questions to
      */
     public static void goToCreateQuestion(Context context, String deckName) {
         Intent intent = new Intent(context, CreateQuestionActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra("serialize_data", new Deck(deckName));
         context.startActivity(intent);
     }
+
+        /**
+         * Opens QuestionInterfaceActivity context
+         * @param context the current context
+         * @param deckName the deck to call
+         */
+        public static void goToQuestionInterface(Context context, String deckName) {
+            Intent intent = new Intent(context, ListActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.putExtra("String", deckName);
+            context.startActivity(intent);
+        }
 
 //    /**
 //     * Opens CreateDeckActivity context

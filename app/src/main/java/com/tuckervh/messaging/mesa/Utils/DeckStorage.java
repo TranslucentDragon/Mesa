@@ -15,6 +15,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import static android.content.ContentValues.TAG;
 
@@ -69,6 +71,33 @@ public class DeckStorage {
             Log.e(TAG, "IOException: ", e);
         }
         return exists;
+    }
+
+    /**
+     * Converts the deck list into a string array (typically for the list activity)
+     * @param context the current context
+     */
+    public static List<String> deckListToArrayList(Context context) {
+        String line;
+        List<String> deckList = new ArrayList<>();
+        try {
+            //get list of names from file
+            FileReader deckFR = new FileReader(new File(context.getFilesDir(), DECK_NAMES));
+            BufferedReader deckBR = new BufferedReader(deckFR);
+            //check if deckName is in list
+            while((line = deckBR.readLine()) != null) {
+                deckList.add(line);
+                Log.v(TAG, line + " added to ArrayList");
+            }
+            deckBR.close();
+            deckFR.close();
+            Log.v(TAG, "Successful IO closes");
+        } catch (FileNotFoundException e) {
+            Log.e(TAG, "FileNotFoundException: ",e);
+        } catch (IOException e) {
+            Log.e(TAG, "IOException: ", e);
+        }
+        return deckList;
     }
 
     /**
