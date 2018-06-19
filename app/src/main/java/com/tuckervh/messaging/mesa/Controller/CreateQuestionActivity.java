@@ -36,7 +36,7 @@ public class CreateQuestionActivity extends AppCompatActivity {
         final EditText answerEditText = findViewById(R.id.txt_answer);
 
         Button addQuestionButton = findViewById(R.id.btn_addQuestion);
-        addQuestionButton.setClickable(false);
+        addQuestionButton.setEnabled(false);
         Button finalizeButton = findViewById(R.id.btn_finalize);
 
         if ((!(TextUtils.isEmpty(answerEditText.getText().toString())))
