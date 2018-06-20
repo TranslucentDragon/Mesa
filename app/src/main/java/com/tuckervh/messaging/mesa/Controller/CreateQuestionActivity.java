@@ -1,9 +1,12 @@
 package com.tuckervh.messaging.mesa.Controller;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,9 +20,14 @@ import static com.tuckervh.messaging.mesa.Utils.DeckStorage.saveDeck;
 
 public class CreateQuestionActivity extends AppCompatActivity {
 
+    Deck deck;
 
-    Deck deck = (Deck) getIntent().getSerializableExtra("serialize_data");
-    Context context = this;
+    EditText questionEditText;
+    EditText answerEditText;
+    Button addQuestionButton;
+    Button finalizeButton;
+
+    private final Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,17 +40,61 @@ public class CreateQuestionActivity extends AppCompatActivity {
         super.onStart();
         setContentView(R.layout.activity_create_question);
 
-        final EditText questionEditText = findViewById(R.id.txt_question);
-        final EditText answerEditText = findViewById(R.id.txt_answer);
+        //TODO: fix serializable data. Intent has no serializable extra
+        deck = (Deck) getIntent().getSerializableExtra("DeckName");
 
-        Button addQuestionButton = findViewById(R.id.btn_addQuestion);
+        questionEditText = findViewById(R.id.txt_question);
+        answerEditText = findViewById(R.id.txt_answer);
+
+        addQuestionButton = findViewById(R.id.btn_addQuestion);
         addQuestionButton.setEnabled(false);
-        Button finalizeButton = findViewById(R.id.btn_finalize);
+        finalizeButton = findViewById(R.id.btn_finalize);
 
-        if ((!(TextUtils.isEmpty(answerEditText.getText().toString())))
-                    && ((!(TextUtils.isEmpty(questionEditText.getText().toString()))))) {
-            addQuestionButton.setClickable(true);
-        }
+        questionEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                //void
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if ((!(TextUtils.isEmpty(s.toString().trim())))
+                        && (answerEditText.getText().toString().length()!=0)) {
+                    addQuestionButton.setEnabled(true);
+                } else {
+                    addQuestionButton.setEnabled(false);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                //void
+            }
+        });
+
+        answerEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                //void
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if ((!(TextUtils.isEmpty(s.toString().trim())))
+                        && (questionEditText.getText().toString().length()!=0)) {
+                    addQuestionButton.setEnabled(true);
+                } else {
+                    addQuestionButton.setEnabled(false);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                //void
+            }
+        });
+
+
 
         addQuestionButton.setOnClickListener(new View.OnClickListener() {
             @Override

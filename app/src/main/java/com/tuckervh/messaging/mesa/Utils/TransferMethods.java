@@ -45,8 +45,8 @@ public class TransferMethods {
      */
     public static void goToCreateQuestion(Context context, String deckName) {
         Intent intent = new Intent(context, CreateQuestionActivity.class);
+        intent.putExtra("DeckName", new Deck(deckName));
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        intent.putExtra("serialize_data", new Deck(deckName));
         context.startActivity(intent);
     }
 
