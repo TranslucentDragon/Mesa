@@ -24,7 +24,8 @@
 
         <activity android:name=".Controller.QuestionInterfaceActivity" />
         <activity android:name=".Controller.CreateDeckActivity" />
-        <activity android:name=".Controller.CreateQuestionActivity"></activity>
+        <activity android:name=".Controller.CreateQuestionActivity" />
+        <activity android:name=".Controller.QuestionControllerActivity"></activity>
     </application>
 
 </manifest>
