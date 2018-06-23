@@ -1,7 +1,6 @@
 package com.tuckervh.messaging.mesa.Controller;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -17,6 +16,7 @@ import com.tuckervh.messaging.mesa.StorageClasses.Deck;
 import com.tuckervh.messaging.mesa.StorageClasses.QuestionData;
 
 import static com.tuckervh.messaging.mesa.Utils.DeckStorage.saveDeck;
+import static com.tuckervh.messaging.mesa.Utils.TransferMethods.goToList;
 
 public class CreateQuestionActivity extends AppCompatActivity {
 
@@ -40,7 +40,7 @@ public class CreateQuestionActivity extends AppCompatActivity {
         super.onStart();
         setContentView(R.layout.activity_create_question);
 
-        //TODO: fix serializable data. Intent has no serializable extra
+        //TODO: turn serializable deck methods into parcelable
         deck = (Deck) getIntent().getSerializableExtra("DeckName");
 
         questionEditText = findViewById(R.id.txt_question);
@@ -114,6 +114,7 @@ public class CreateQuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 saveDeck(context, deck);
+                goToList(context);
             }
         });
 

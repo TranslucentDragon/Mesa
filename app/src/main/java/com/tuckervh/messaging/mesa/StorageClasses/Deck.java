@@ -2,7 +2,7 @@ package com.tuckervh.messaging.mesa.StorageClasses;
 
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 
@@ -16,7 +16,7 @@ public class Deck implements Serializable{
     }
 
     public Deck(String name) {
-        this(new ArrayList<QuestionData>(), name);
+        this(new LinkedList<QuestionData>(), name);
     }
 
     public void addQuestion(QuestionData question) {

@@ -138,7 +138,7 @@ public class DeckStorage {
             recalledDeck = (Deck) ois.readObject();
             ois.close();
             fis.close();
-            Log.i(TAG, "Successful Save");
+            Log.i(TAG, "Successful recall");
         } catch (FileNotFoundException e) {
             Log.e(TAG, "FileNotFoundException: ",e);
         } catch (IOException e) {
