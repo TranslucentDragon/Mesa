@@ -10,10 +10,11 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import com.tuckervh.messaging.mesa.R;
-import com.tuckervh.messaging.mesa.Utils.DeckStorage;
+import com.tuckervh.messaging.mesa.Utils.DeckStorageMethods;
 
 import java.util.List;
 
+import static com.tuckervh.messaging.mesa.Utils.TransferMethods.goToQuestionController;
 import static com.tuckervh.messaging.mesa.Utils.TransferMethods.goToQuestionInterface;
 
 public class ListActivity extends AppCompatActivity {
@@ -33,7 +34,7 @@ public class ListActivity extends AppCompatActivity {
         super.onStart();
         setContentView(R.layout.activity_list);
 
-        final List<String> deckList = DeckStorage.getDeckList(context);
+        final List<String> deckList = DeckStorageMethods.getDeckList(context);
         ArrayAdapter<String> adapter = new ArrayAdapter<String> (
                 context,
                 R.layout.listview_element,

@@ -15,7 +15,7 @@ import com.tuckervh.messaging.mesa.R;
 import com.tuckervh.messaging.mesa.StorageClasses.Deck;
 import com.tuckervh.messaging.mesa.StorageClasses.QuestionData;
 
-import static com.tuckervh.messaging.mesa.Utils.DeckStorage.saveDeck;
+import static com.tuckervh.messaging.mesa.Utils.DeckStorageMethods.saveDeck;
 import static com.tuckervh.messaging.mesa.Utils.TransferMethods.goToList;
 
 public class CreateQuestionActivity extends AppCompatActivity {

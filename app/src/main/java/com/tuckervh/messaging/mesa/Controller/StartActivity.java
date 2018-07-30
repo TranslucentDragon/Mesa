@@ -34,7 +34,7 @@ public class StartActivity extends AppCompatActivity {
             }
         });
 
-        newDeckBtn.setOnClickListener(new View.OnClickListener() {
+        newDeckBtn.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TransferMethods.goToList(context);

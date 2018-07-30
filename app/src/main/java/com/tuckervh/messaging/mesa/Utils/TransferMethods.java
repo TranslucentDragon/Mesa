@@ -51,16 +51,28 @@ public class TransferMethods {
     }
 
         /**
-         * Opens QuestionInterfaceActivity context
+         * Opens QuestionControllerActivity
          * @param context the current context
          * @param deckName the deck to call
          */
-        public static void goToQuestionInterface(Context context, String deckName) {
-            Intent intent = new Intent(context, ListActivity.class);
+        public static void goToQuestionController(Context context, String deckName) {
+            Intent intent = new Intent(context, QuestionControllerActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             intent.putExtra("String", deckName);
             context.startActivity(intent);
         }
+
+    /**
+     * Opens QuestionInterfaceActivity
+     * @param context the current context
+     * @param deckName the deck to call
+     */
+    public static void goToQuestionInterface(Context context, String deckName) {
+        Intent intent = new Intent(context, QuestionControllerActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("String", deckName);
+        context.startActivity(intent);
+    }
 
 //    /**
 //     * Opens CreateDeckActivity context

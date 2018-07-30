@@ -20,7 +20,7 @@ import java.util.List;
 
 import static android.content.ContentValues.TAG;
 
-public class DeckStorage {
+public class DeckStorageMethods {
 
     private final static String DECK_NAMES = "LIST_OF_ALL_DECKS";
 

@@ -2,21 +2,21 @@ package com.tuckervh.messaging.mesa.StorageClasses;
 
 
 import java.io.Serializable;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.Collection;
+import java.util.LinkedHashSet;
 
 
 public class Deck implements Serializable{
-    private List<QuestionData> questionList;
+    private Collection<QuestionData> questionList;
     private String name;
 
-    public Deck(List<QuestionData> questionList, String name) {
+    public Deck(LinkedHashSet<QuestionData> questionList, String name) {
         this.questionList = questionList;
         this.name = name;
     }
 
     public Deck(String name) {
-        this(new LinkedList<QuestionData>(), name);
+        this(new LinkedHashSet<QuestionData>(), name);
     }
 
     public void addQuestion(QuestionData question) {
@@ -27,7 +27,7 @@ public class Deck implements Serializable{
         return name;
     }
 
-    public List<QuestionData> getQuestionList() {
+    public Collection<QuestionData> getQuestionCollection() {
         return questionList;
     }
 }
